@@ -248,11 +248,13 @@ static HIDRunner *hid;
 
 - (void)keyDown:(NSEvent *)event {
 	//NSLog(@"down %i", [event keyCode]);
+	printf("down %i\n", [event keyCode]);
 	hid->keys[[event keyCode]] = true;
 	[hid kick];
 }
 - (void)keyUp:(NSEvent *)event {
 	//NSLog(@"up %i", [event keyCode]);
+	printf("up %i\n", [event keyCode]);
 	hid->keys[[event keyCode]] = false;
 	[hid kick];
 }
